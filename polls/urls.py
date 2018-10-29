@@ -3,5 +3,6 @@ from polls import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^question/(?P<question_pk>\d+)/$', views.question_detail, name='question-detail')    
+#    url(r'^question/(?P<question_pk>\d+)/$', views.question_detail, name='question-detail')
+    url(r'^question/(?P<pk>\d+)/$', views.QuestionDetailView.as_view(), name='question-detail')    
 ]
