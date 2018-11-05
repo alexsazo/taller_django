@@ -1,0 +1,41 @@
+{% extends 'polls/base.html' %}
+{% load humanize %}
+{% load funciones_varias %}
+
+
+{% block PAGE_TITLE %}
+Todas las preguntas
+{% endblock PAGE_TITLE %}
+
+{% block texto_adicional %}
+
+<table>
+  <thead>
+    <tr>
+      <th>
+	Texto pregunta
+      </th>
+      <th>
+	Pub_date
+      </th>      
+    </tr>
+  </thead>
+  <tbody> 
+  {% for question in object_list %}
+  <tr>
+    <td>{{ question.question_text | title }}</td>
+    <td>{{ question.pub_date | naturaltime }}</td>    
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+{{ object_list | length | apnumber}}
+{{ diccionario | select_values:"arg1,arg3" }}
+
+
+
+{% endblock texto_adicional %}
+
+
+

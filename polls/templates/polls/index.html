@@ -1,2 +1,9 @@
-<h1>Mi titulo</h1>
-<p>Esta es la mejor clase de django que pueda existir.</p>
+{% extends 'polls/base.html' %}
+
+{% block PAGE_TITLE %}
+Mi titulo
+{% endblock PAGE_TITLE %}
+
+{% block texto_adicional %}
+Esta es la mejor clase de django que pueda existir.
+{% endblock texto_adicional %}

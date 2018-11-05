@@ -1,0 +1,7 @@
+<h1>Formulario de Pregunta</h1>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form }}
+  <button type="submit">Enviar</button>
+</form>
