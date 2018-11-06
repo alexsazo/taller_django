@@ -4,7 +4,8 @@ from django.core.urlresolvers import reverse, reverse_lazy
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published', auto_now_add=True)
-
+    user = models.ForeignKey('auth.User', on_delete=models.CASCADE, null=True)
+    
     def __str__(self):
         return self.question_text
 

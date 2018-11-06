@@ -1,12 +1,15 @@
+{% extends 'polls/base.html' %}
 {% load bootstrap4 %}
 {% bootstrap_css %}
 {% bootstrap_javascript jquery='full' %}
-<h1>Formulario de Pregunta</h1>
 
+{% block PAGE_TITLE %}Formulario de Pregunta{% endblock PAGE_TITLE %}
+{% block texto_adicional %}
 <form method="post">
   {% csrf_token %}
-  {% bootstrap_form form %}
+  {{ form }}
   {% buttons %}
   <button class="btn" type="submit">Enviar</button>
   {% endbuttons %}
 </form>
+{% endblock texto_adicional %}

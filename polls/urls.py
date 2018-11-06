@@ -9,4 +9,8 @@ urlpatterns = [
     url(r'^question/(?P<pk>\d+)/edit/$', views.QuestionUpdateView.as_view(), name='question-update'),    
     url(r'^question/$', views.QuestionListView.as_view(), name='question-list'),
     url(r'^question/create/$', views.QuestionCreateView.as_view(), name='question-create'),
+    url(r'^choice/create/$', views.ChoiceCreateView.as_view(), name='choice-create'),    
+    url(r'^show_form/$', views.show_form, name='show-form'),
+    url(r'^show_model_form/$', views.show_model_form, name='show-model-form'),
+    url(r'^show_formset/$', views.show_formset, name='show-formset'),            
 ]
